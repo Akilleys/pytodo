@@ -33,28 +33,66 @@ def archiveList():
     return
 
 def main():
-    lists_dir = startUpChecks()
-    print("  ____       _____     ____        \n |  _ \\ _   |_   _|__ |  _ \\  ___  \n | |_) | | | || |/ _ \\| | | |/ _ \\ \n |  __/| |_| || | (_) | |_| | (_) |\n |_|    \\__, ||_|\\___/|____/ \\___/ \n        |___/                      ")
-    print("--------------------------------------------")
-    print("1. Make List")
-    print("2. Select List")
-    print("3. Delete List")
-    print("4. Archive List")
-    choice = int(input())
-    match choice:
-        case 1:
-            makeList(lists_dir)
-        case 2:
-            displayLists()
-        case 3:
-            deleteList()
-        case 4:
-            archiveList()
+    exitBool = False
+    while(not exitBool):
+        lists_dir = startUpChecks()
+        print("  ____       _____     ____        \n |  _ \\ _   |_   _|__ |  _ \\  ___  \n | |_) | | | || |/ _ \\| | | |/ _ \\ \n |  __/| |_| || | (_) | |_| | (_) |\n |_|    \\__, ||_|\\___/|____/ \\___/ \n        |___/                      ")
+        print("--------------------------------------------")
+        print("1. Make List")
+        print("2. Select List")
+        print("3. Delete List")
+        print("4. Archive List")
+        print("9. Exit Application")
+        choice = int(input())
+        match choice:
+            case 1:
+                makeList(lists_dir)
+            case 2:
+                displayLists()
+            case 3:
+                deleteList()   
+            case 4:
+                archiveList()
+            case 9:
+                exitBool = True
+    
 
 class list:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+    def __init__(self, tasks):
+        tasks = []
+        
+    def __str__(self):
+        return f"{self.tasks}"
+
+    def addTask():
+        tasks.append(objective())
+    
+    def listTasks():
+        taskNum = 0
+        for task in tasks:
+            print(f"{taskNum}: {task.task} ")
+            if task.finished == true:
+                print("✓")
+            else:
+                print("x")
+                
+    def readTasks():
+        return
+
+    def writeTasks():
+        return
+        
+
+
+    
+
+class objective:
+    def __init__(self, task, finished):
+        self.task = task
+        self.finished = False
+    
+    def __str__(self):
+        return f"{self.task} is finished: {self.finished}"
 
 if __name__ == "__main__":
     main()
