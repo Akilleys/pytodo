@@ -1,0 +1,3 @@
+Go Home, False
+Eat Burger, False
+Wash furance, True
